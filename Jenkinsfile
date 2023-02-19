@@ -29,19 +29,11 @@ node {
         }
         }
 
-    //feature build and test
-    stage('feature build and test') {
-        env.BRANCH_NAME == 'feature'
+    //dev build and test
+    stage('dev build and test') {
+        env.BRANCH_NAME == 'dev'
         sh("docker build -t ${imageTag}:${buildnum} .")
         sh("docker run -d ${imageTag}:${buildnum}")
-        sh 'echo feature test'
-        }
-
-    //dev build and test
-        stage('feature or dev build and test') {
-        env.BRANCH_NAME == 'dev'
-        sh("docker build -t ${imageTag}/snapshot:${buildnum} .")
-        sh("docker run -d ${imageTag}/snapshot:${buildnum}")
         sh 'echo dev test'
         }
 }
