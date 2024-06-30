@@ -14,10 +14,10 @@ RUN apt-get update \
         unzip \
         wget \
         gnupg \
-        netcat \
+        netcat-openbsd \
         zip \
         python3 \
-        python3-pip\
+        python3-pip \
         jq
 
 # docker repos
