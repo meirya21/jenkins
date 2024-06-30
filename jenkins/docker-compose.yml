@@ -2,10 +2,10 @@ version: "3"
 services:
   jenkins:
     build: 
+      context: .
       args:
         HOST_DOCKER_GID: 1001
     container_name: jenkins
-    image: meir215/jenkins
     hostname: jenkins
     ports:
       - 8880:8080
